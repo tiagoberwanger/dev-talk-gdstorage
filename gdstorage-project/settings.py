@@ -33,10 +33,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Google Drive Storage Settings
-GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE = None
-GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE_CONTENTS = env('GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE_CONTENTS')
+GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE = 'data.json'
+GOOGLE_DRIVE_STORAGE_MEDIA_ROOT = 'motorcycles',
 
 # Application definition
 
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'motorcycles',
     'django.contrib.staticfiles',
+    'whitenoise.runserver_nostatic',
     'gdstorage'
 ]
 
@@ -59,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'gdstorage-project.urls'
@@ -130,6 +133,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'dev-talk-gdstorage/static')
+]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

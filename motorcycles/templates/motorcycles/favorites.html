@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1>Motocicletas favoritas</h1>
+    {% for motorcycle in motorcycles %}
+        <p>{{ motorcycle.motorcycle_name }}</p>
+        <p>{{ motorcycle.motorcycle_brand }}</p>
+    {% endfor %}
+    {% for image in images %}
+        <img src="{{ image.get_image_url|default_if_none:'#' }}" alt="motorcycle">
+    {% endfor %}
+{% endblock %}

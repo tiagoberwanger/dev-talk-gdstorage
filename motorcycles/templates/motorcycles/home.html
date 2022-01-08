@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div>
+        <h1>Minhas motocicletas</h1>
+        <div style="margin-bottom: 10px;">
+            <a href="{% url 'motorcycles' %}">Add motocicleta</a>
+        </div>
+        <div>
+            <a href="{% url 'favorites' %}">Ver favoritas</a>
+        </div>
+    </div>
+{% endblock %}
