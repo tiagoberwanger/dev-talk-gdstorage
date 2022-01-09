@@ -36,7 +36,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Google Drive Storage Settings
 GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE = 'data.json'
-GOOGLE_DRIVE_STORAGE_MEDIA_ROOT = 'motorcycles',
 
 # Application definition
 
