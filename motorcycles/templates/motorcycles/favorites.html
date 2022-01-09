@@ -2,10 +2,15 @@
 
 
 {% block content %}
+    <header><a href="{% url 'motorcycles' %}">Add motocicleta</a></header>
     <h1>Motocicletas favoritas</h1>
     {% for motorcycle in motorcycles %}
-        <p>{{ motorcycle.motorcycle_name }}</p>
-        <p>{{ motorcycle.motorcycle_brand }}</p>
-        <img src="{{ motorcycle.motorcycle_image.url }}" alt="motorcycle">
+        <h2>{{ motorcycle.motorcycle_name }}</h2>
+        <h4>{{ motorcycle.motorcycle_brand }}</h4>
+        {% if motorcycle.motorcycle_image.url %}
+            <img src="{{ motorcycle.motorcycle_image.url }}" alt="motorcycle">
+        {% else %}
+            <img src="{{ 'images/no-image.png' }}" alt="motorcycle">
+        {% endif %}
     {% endfor %}
 {% endblock %}
