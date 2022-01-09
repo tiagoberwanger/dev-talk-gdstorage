@@ -6,8 +6,6 @@
     {% for motorcycle in motorcycles %}
         <p>{{ motorcycle.motorcycle_name }}</p>
         <p>{{ motorcycle.motorcycle_brand }}</p>
-    {% endfor %}
-    {% for image in images %}
-        <img src="{{ image.get_image_url|default_if_none:'#' }}" alt="motorcycle">
+        <img src="{{ motorcycle.motorcycle_image.url }}" alt="motorcycle">
     {% endfor %}
 {% endblock %}

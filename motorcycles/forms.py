@@ -1,11 +1,11 @@
-from django import forms
-
+from django.forms import ModelForm
+from motorcycles.models import Motorcycle
 
 # Create the form class.
-class MotorcycleForm(forms.Form):
-    motorcycle_name = forms.CharField()
-    motorcycle_brand = forms.CharField()
+class MotorcycleForm(ModelForm):
+    class Meta:
+        model = Motorcycle
+        fields = ['motorcycle_name', 'motorcycle_brand', 'motorcycle_image']
 
-
-class MotorcycleImageForm(forms.Form):
-    motorcycle_image = forms.FileField()
+# Creating a form to add an article.
+form = MotorcycleForm()
