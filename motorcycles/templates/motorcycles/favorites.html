@@ -2,15 +2,18 @@
 
 
 {% block content %}
-    <header><a href="{% url 'motorcycles' %}">Add motocicleta</a></header>
+    <header>
+        <a href="{% url 'home' %}">Homepage</a> /
+        <a href="{% url 'motorcycles' %}">Add motocicleta</a>
+    </header>
     <h1>Motocicletas favoritas</h1>
     {% for motorcycle in motorcycles %}
         <h2>{{ motorcycle.motorcycle_name }}</h2>
         <h4>{{ motorcycle.motorcycle_brand }}</h4>
         {% if motorcycle.motorcycle_image.url %}
-            <img src="{{ motorcycle.motorcycle_image.url }}" alt="motorcycle">
+            <img src="{{ motorcycle.motorcycle_image.url }}" alt="motorcycle" style="max-width:400px; max-height:400px;">
         {% else %}
-            <img src="{{ 'images/no-image.png' }}" alt="motorcycle">
+            <img src="/media/images/no-image.png" alt="motorcycle" style="max-width:400px; max-height:400px;">
         {% endif %}
     {% endfor %}
 {% endblock %}

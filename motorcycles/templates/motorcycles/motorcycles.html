@@ -2,7 +2,10 @@
 
 
 {% block content %}
-    <header><a href="{% url 'favorites' %}">Ver favoritas</a></header>
+    <header>
+        <a href="{% url 'home' %}">Homepage</a> /
+        <a href="{% url 'favorites' %}">Ver favoritas</a>
+    </header>
     <h1>Adicionar uma motocicleta</h1>
     <div>
         <form method="post" enctype="multipart/form-data">
