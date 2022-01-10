@@ -66,3 +66,6 @@ class File(models.Model):
 ```
 
 ### AGORA É SÓ USAR!
+___ 
+
+Ref.: https://django-googledrive-storage.readthedocs.io/en/latest/
