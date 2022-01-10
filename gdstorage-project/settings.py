@@ -34,8 +34,8 @@ ALLOWED_HOSTS = []
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Google Drive Storage Settings
-GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE = 'data.json'
+# #PASSO
+# GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE = 'data.json'
 
 # Application definition
 
@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'motorcycles',
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
-    'gdstorage'
+    # # PASSO
+    # 'gdstorage'
 ]
 
 MIDDLEWARE = [
